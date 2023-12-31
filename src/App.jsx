@@ -8,6 +8,7 @@ import NotesListProvider from "./store/notes-store-context";
 import { useState } from "react";
 function App() {
   const [currentTab, setCurrentTab] = useState("Home");
+
   return (
     <>
       <NotesListProvider>

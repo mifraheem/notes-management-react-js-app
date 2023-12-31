@@ -1,5 +1,5 @@
 import React from "react";
-import myPic from "../../public/ifraheem.png";
+import myPic from "../ifraheem.png";
 
 export default function AboutMe() {
   return (

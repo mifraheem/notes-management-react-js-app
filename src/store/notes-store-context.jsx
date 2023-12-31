@@ -14,12 +14,21 @@ const notesListReducer = (currentNoteslist, action) => {
   } else if (action.type === "ADD-NOTE") {
     newNotesList = [action.payload, ...currentNoteslist];
   }
+  localStorage.removeItem;
+  // let localNotesList;
+  localStorage.setItem("localNotesList", JSON.stringify(newNotesList));
   return newNotesList;
 };
+let localNotesList = localStorage.getItem("localNotesList");
+let objNotesList = JSON.parse(localNotesList);
+if (!objNotesList) {
+  objNotesList = [];
+}
 export default function NotesListProvider({ children }) {
   const [notesList, dispatchNotesList] = useReducer(
     notesListReducer,
-    DEFAULT_NOTES_LIST
+    // DEFAULT_NOTES_LIST
+    objNotesList
   );
 
   const addNote = (title, body) => {
