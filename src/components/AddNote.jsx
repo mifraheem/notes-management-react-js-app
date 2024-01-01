@@ -34,7 +34,7 @@ export default function AddNote() {
         <label htmlFor="note-body" className="form-label">
           Topic Detail
         </label>
-        <textarea ref={body} className="form-control" id="note-body" />
+        <textarea ref={body} className="form-control" id="note-body" rows={8} />
       </div>
       <center>
         <button type="submit" className="btn btn-primary">
