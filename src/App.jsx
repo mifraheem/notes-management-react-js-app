@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import AddNote from "./components/AddNote";
@@ -6,6 +7,7 @@ import Header from "./components/Header";
 import WelcomeMessage from "./components/WelcomeMessage";
 import NotesListProvider from "./store/notes-store-context";
 import { useState } from "react";
+
 function App() {
   const [currentTab, setCurrentTab] = useState("Home");
 
@@ -13,10 +15,11 @@ function App() {
     <>
       <NotesListProvider>
         <Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
-
+        <Outlet />
+        {/* 
         {currentTab === "Home" && <AllNotes />}
         {currentTab === "Add-Note" && <AddNote />}
-        {currentTab === "about" && <AboutMe />}
+        {currentTab === "about" && <AboutMe />} */}
       </NotesListProvider>
     </>
   );
